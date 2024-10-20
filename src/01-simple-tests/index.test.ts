@@ -57,17 +57,17 @@ describe('simpleCalculator tests', () => {
   });
 
   test('should return null for invalid action', () => {
-    expect(simpleCalculator({ a: 1, b: 2, action: '' })).toBeFalsy();
-    expect(simpleCalculator({ a: 1, b: 2, action: 'xxx' })).toBeFalsy();
-    expect(simpleCalculator({ a: 1, b: 2, action: 2 })).toBeFalsy();
-    expect(simpleCalculator({ a: 1, b: 2, action: Action })).toBeFalsy();
+    expect(simpleCalculator({ a: 1, b: 2, action: '' })).toBeNull();
+    expect(simpleCalculator({ a: 1, b: 2, action: 'xxx' })).toBeNull();
+    expect(simpleCalculator({ a: 1, b: 2, action: 2 })).toBeNull();
+    expect(simpleCalculator({ a: 1, b: 2, action: Action })).toBeNull();
   });
 
   test('should return null for invalid arguments', () => {
     // Write your test here
-    expect(simpleCalculator({ a: '1', b: 2, action: Action.Add })).toBeFalsy();
-    expect(simpleCalculator({ a: '', b: 2, action: Action.Add })).toBeFalsy();
-    expect(simpleCalculator({ a: true, b: 2, action: Action.Add })).toBeFalsy();
-    expect(simpleCalculator({ a: 1, b: [1], action: Action.Add })).toBeFalsy();
+    expect(simpleCalculator({ a: '1', b: 2, action: Action.Add })).toBeNull();
+    expect(simpleCalculator({ a: '', b: 2, action: Action.Add })).toBeNull();
+    expect(simpleCalculator({ a: true, b: 2, action: Action.Add })).toBeNull();
+    expect(simpleCalculator({ a: 1, b: [1], action: Action.Add })).toBeNull();
   });
 });
